@@ -17,7 +17,7 @@ jobs:
 
       - name: Write JSON (force diff)
         run: |
-          echo '${{ toJson(github.event.client_payload) }}' > room-status-v2.json
+          echo '${{ toJson(github.event.client_payload) }}' > room-status.json
 
       - name: Show written file (debug)
         run: |
