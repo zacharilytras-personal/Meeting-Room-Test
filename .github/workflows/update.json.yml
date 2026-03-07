@@ -10,14 +10,28 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Debug payload (proof step)
+        run: |
+          echo "=== RAW CLIENT PAYLOAD ==="
+          echo '${{ toJson(github.event.client_payload) }}'
+          echo "=========================="
 
       - name: Write JSON
         run: |
           echo '${{ toJson(github.event.client_payload) }}' > room-status.json
 
-      - name: Commit
+      - name: Show written file
+        run: |
+          echo "=== FILE CONTENTS ==="
+          cat room-status.json
+          echo "====================="
+
+      - name: Commit JSON
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Update room status"
