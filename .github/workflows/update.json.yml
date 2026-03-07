@@ -12,26 +12,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Debug payload (proof step)
+      - name: Debug payload
         run: |
-          echo "=== RAW CLIENT PAYLOAD ==="
+          echo "=== PAYLOAD ==="
           echo '${{ toJson(github.event.client_payload) }}'
-          echo "=========================="
+          echo "==============="
 
       - name: Write JSON
         run: |
           echo '${{ toJson(github.event.client_payload) }}' > room-status.json
 
-      - name: Show written file
+      - name: Show file
         run: |
-          echo "=== FILE CONTENTS ==="
+          echo "=== FILE ==="
           cat room-status.json
-          echo "====================="
+          echo "==========="
 
-      - name: Commit JSON
+      - name: Commit
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Update room status"
