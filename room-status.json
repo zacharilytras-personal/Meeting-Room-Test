@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-10T00:15:01.1065426Z",
+  "generated_at": "2026-03-10T00:30:01.9817288Z",
   "rooms": {
     "accounts": {
       "current_name": "Nobody",
@@ -10,12 +10,12 @@
       "until": "tomorrow"
     },
     "zach": {
-      "current_name": "ehusnu@daikin.com.au",
+      "current_name": "Anthony Guiragossian",
       "date": "Today is Tuesday 10 March 2026",
-      "next_name": "Anthony Guiragossian",
-      "next_time": "11:30 AM - 12:00 PM",
+      "next_name": "Zachari Lytras",
+      "next_time": "12:00 PM - 1:00 PM",
       "status": "BOOKED",
-      "until": "11:30 AM"
+      "until": "12:00 PM"
     }
   }
 }
